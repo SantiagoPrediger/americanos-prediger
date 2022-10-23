@@ -1,5 +1,6 @@
-alert('Bienvenido a Torneos Americanos de Padel');
+// BIENVENIDA Y CREACION DE USUARIO - Asignacion de variables
 
+alert('Bienvenido a Torneos Americanos de Padel');
 
 const nombre = prompt('Ingrese su nombre');
 const apellido = prompt('Ingrese su apellido');
@@ -7,6 +8,8 @@ const equipo = prompt('Ingrese el nombre de su equipo');
 
 alert('Gracias ' + nombre + ' ' + apellido + ' por registrarte en la plataforma de Torneos Americanos');
 alert('A continuacion: Todos los premios segun la categoria del torneo:')
+
+//INFORMACION SOBRE LOS TORNEOS - Ciclo con for + Operaciones
 
 let premioTorneos = 44000;
 let costoInscripcion = 4400;
@@ -16,47 +19,72 @@ for (let i = 4; i >= 1; i--) {
     alert('Si el torneo es Categoria ' + i + ' el premio por pareja es de ' + Math.round(premioTorneos / i) + '. El costo de inscripcion es ' + Math.round(costoInscripcion / i) + ' por pareja.');
 }
 
+// SELECCION DE CATEGORIA DE USUARIO - Ciclo con while
+
 let categoria = Number(prompt('Ingrese su categoria (solo numero)'));  //Falta indicar que solo se pueda agregar valor numerico
 
 while (categoria > 4 || categoria == 0) {
     alert('Categoria incorrecta, ingrese un valor entre 1 y 4.');
-    categoria = Number(prompt('Ingrese su categoria (solo numero).'));
+    categoria = parseInt(prompt('Ingrese su categoria (solo numero).'));
 }
 
+// INFORMACION DE TORNEOS - Asignaciond de variables
 
-let torneoCat4A = 'La fabrica Padel'
-let torneoCat4B = 'Matchpoint Padel'
+let torneoCat4A = 'La fabrica Padel Categoria 4';
+let torneoCat4B = 'Matchpoint Padel Categoria 4';
 
-let torneoCat3A = 'La fabrica Padel'
-let torneoCat3B = 'Matchpoint Padel'
+let torneoCat3A = 'Efecto Padel Categoria 3';
+let torneoCat3B = 'La Bandeja Padel Categoria 3';
 
-let torneoCat2A = 'La fabrica Padel'
-let torneoCat2B = 'Matchpoint Padel'
+let torneoCat2A = 'Casa Blanca Padel Categoria 2';
+let torneoCat2B = 'Matchpoint Padel Categoria 2';
 
-let torneoCat1A = 'La fabrica Padel'
-let torneoCat1B = 'Matchpoint Padel'
+let torneoCat1A = 'Almeria Padel Categoria 1';
+let torneoCat1B = 'Casa Blanca Padel Categoria 1';
+
+let torneoElegido;
+
+// FUNCION PARA CREAR LOS TORNEOS SEGUN CATEGORIA - Funcion combinada con un condicional, y un while para evitar valores incorrectos
+
+const torneosDisponibles = (torneoA, torneoB) => {
+    torneoElegido = Number(prompt('Estos son los torneos de categoria 4 \n' + '1-' + torneoA + '\n' + '2-' + torneoB + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
+        if (torneoElegido == 1) {
+            torneoElegido = torneoA;
+        } else if (torneoElegido == 2) {
+            torneoElegido = torneoB;
+        } else {
+            while (torneoElegido != 1 && torneoElegido != 2) {
+                torneoElegido = Number(prompt('OPCION INCORRECTA \n \nSeleccione un torneo indicando la opcion 1 o 2\n' + '\n' + '1-' + torneoA + '\n' + '2-' + torneoB + '\n'));}
+            if (torneoElegido == 1) {
+                torneoElegido = torneoA;
+            } else if (torneoElegido == 2) {
+                torneoElegido = torneoB;
+            };
+        }
+}
+
+// SELECCION DE TORNEO A PARTICIPAR - Ciclo con switch, combinado con una funcion.
 
 switch (categoria) {
     case 4:
-        let torneoElegido = Number(prompt('Estos son los torneos de categoria 8 \n' + '1-' + torneoCat4A + '\n' + '2-' + torneoCat4B + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
-        if (torneoElegido == 1) {
-            torneoElegido = torneoCat4A;
-        } else if (torneoElegido == 2) {
-            torneoElegido = torneoCat4B;
-        } else {
-            while (torneoElegido != 1) {
-                torneoElegido = Number(prompt('Seleccione un torneo indicando la opcion 1 o 2'));
-            };
-        }
+        torneosDisponibles(torneoCat4A, torneoCat4B)
         break;
+    case 3:
+        torneosDisponibles(torneoCat3A, torneoCat3B)
+        break;
+    case 2:
+        torneosDisponibles(torneoCat2A, torneoCat2B)
+        break;
+    case 1:
+        torneosDisponibles(torneoCat1A, torneoCat1B)
+        break;       
 }
 
-alert('Gracias por registrar al equipo "' + equipo + '" en el torneo categoria '+ categoria + '.');
+// SALUDO DE CONFIRMACION 
 
+alert('Usted se inscribio en el torneo de ' + torneoElegido);
 
-
-
-
+alert('Gracias ' + nombre + ' por registrar al equipo "' + equipo + '" en el torneo "'+ torneoElegido + '".' );
 
 
 /*
@@ -76,3 +104,70 @@ if (categoria <= 8 && categoria >= 1) {
     alert('Ingrese una categoria correcta, entre 1 y 8')
 }
 */
+
+/* switch (categoria) {
+    case 4:
+        torneoElegido = Number(prompt('Estos son los torneos de categoria 4 \n' + '1-' + torneoCat4A + '\n' + '2-' + torneoCat4B + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
+        if (torneoElegido == 1) {
+            torneoElegido = torneoCat4A;
+        } else if (torneoElegido == 2) {
+            torneoElegido = torneoCat4B;
+        } else {
+            while (torneoElegido != 1 && torneoElegido != 2) {
+                torneoElegido = Number(prompt('OPCION INCORRECTA \n \nSeleccione un torneo indicando la opcion 1 o 2\n' + '\n' + '1-' + torneoCat4A + '\n' + '2-' + torneoCat4B + '\n'));}
+            if (torneoElegido == 1) {
+                torneoElegido = torneoCat4A;
+            } else if (torneoElegido == 2) {
+                torneoElegido = torneoCat4B;
+            };
+        }
+        break;
+    case 3:
+        torneoElegido = Number(prompt('Estos son los torneos de categoria 3 \n' + '1-' + torneoCat3A + '\n' + '2-' + torneoCat3B + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
+        if (torneoElegido == 1) {
+            torneoElegido = torneoCat3A;
+        } else if (torneoElegido == 2) {
+            torneoElegido = torneoCat3B;
+        } else {
+            while (torneoElegido != 1 && torneoElegido != 2) {
+                torneoElegido = Number(prompt('Seleccione un torneo indicando la opcion 1 o 2'));}
+            if (torneoElegido == 1) {
+                torneoElegido = torneoCat3A;
+            } else if (torneoElegido == 2) {
+                torneoElegido = torneoCat3B;
+            };
+        }
+        break;
+    case 2:
+        torneoElegido = Number(prompt('Estos son los torneos de categoria 2 \n' + '1-' + torneoCat2A + '\n' + '2-' + torneoCat2B + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
+        if (torneoElegido == 1) {
+            torneoElegido = torneoCat2A;
+        } else if (torneoElegido == 2) {
+            torneoElegido = torneoCat2B;
+        } else {
+            while (torneoElegido != 1 && torneoElegido != 2) {
+                torneoElegido = Number(prompt('Seleccione un torneo indicando la opcion 1 o 2'));}
+            if (torneoElegido == 1) {
+                torneoElegido = torneoCat2A;
+            } else if (torneoElegido == 2) {
+                torneoElegido = torneoCat2B;
+            };
+        }
+        break;
+    case 1:
+        torneoElegido = Number(prompt('Estos son los torneos de categoria 1 \n' + '1-' + torneoCat1A + '\n' + '2-' + torneoCat1B + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
+        if (torneoElegido == 1) {
+            torneoElegido = torneoCat1A;
+        } else if (torneoElegido == 2) {
+            torneoElegido = torneoCat1B;
+        } else {
+            while (torneoElegido != 1 && torneoElegido != 2) {
+                torneoElegido = Number(prompt('Seleccione un torneo indicando la opcion 1 o 2'));}
+            if (torneoElegido == 1) {
+                torneoElegido = torneoCat1A;
+            } else if (torneoElegido == 2) {
+                torneoElegido = torneoCat1B;
+            };
+        }
+        break;       
+} */
