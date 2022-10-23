@@ -1,10 +1,11 @@
 alert('Bienvenido a Torneos Americanos de Padel');
 
+
 const nombre = prompt('Ingrese su nombre');
 const apellido = prompt('Ingrese su apellido');
-const usuario = prompt('Ingrese su Nickname');
+const equipo = prompt('Ingrese el nombre de su equipo');
 
-alert('Gracias ' + nombre + ' ' + apellido + ' por registrarte en Torneos Americanos');
+alert('Gracias ' + nombre + ' ' + apellido + ' por registrarte en la plataforma de Torneos Americanos');
 alert('A continuacion: Todos los premios segun la categoria del torneo:')
 
 let premioTorneos = 44000;
@@ -17,24 +18,11 @@ for (let i = 4; i >= 1; i--) {
 
 let categoria = Number(prompt('Ingrese su categoria (solo numero)'));  //Falta indicar que solo se pueda agregar valor numerico
 
-while (categoria > 4) {
-    alert('Categoria incorrecta, ingrese un valor entre 1 y 8.');
+while (categoria > 4 || categoria == 0) {
+    alert('Categoria incorrecta, ingrese un valor entre 1 y 4.');
     categoria = Number(prompt('Ingrese su categoria (solo numero).'));
 }
 
-alert('Su categoria es ' + categoria + '. Estos son los torneos segun su categoria (aca va a aparecer una lista de torneos a elegir que voy a hacer con el swich)')
-
-let torneoCat8A = 'La fabrica Padel'
-let torneoCat8B = 'Matchpoint Padel'
-
-let torneoCat7A = 'La fabrica Padel'
-let torneoCat7B = 'Matchpoint Padel'
-
-let torneoCat6A = 'La fabrica Padel'
-let torneoCat6B = 'Matchpoint Padel'
-
-let torneoCat5A = 'La fabrica Padel'
-let torneoCat5B = 'Matchpoint Padel'
 
 let torneoCat4A = 'La fabrica Padel'
 let torneoCat4B = 'Matchpoint Padel'
@@ -50,20 +38,20 @@ let torneoCat1B = 'Matchpoint Padel'
 
 switch (categoria) {
     case 4:
-        let torneoElegido = Number(prompt('Estos son los torneos de categoria 8 \n' + '1-' + torneoCat8A + '\n' + '2-' + torneoCat8B + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
+        let torneoElegido = Number(prompt('Estos son los torneos de categoria 8 \n' + '1-' + torneoCat4A + '\n' + '2-' + torneoCat4B + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
         if (torneoElegido == 1) {
-            torneoElegido = torneoCat8A;
+            torneoElegido = torneoCat4A;
         } else if (torneoElegido == 2) {
-            torneoElegido = torneoCat8B;
+            torneoElegido = torneoCat4B;
         } else {
-            while (torneoElegido != 1 || torneoElegido != 2) {
+            while (torneoElegido != 1) {
                 torneoElegido = Number(prompt('Seleccione un torneo indicando la opcion 1 o 2'));
-            }
+            };
         }
         break;
 }
 
-alert('Gracias por registrarse en el torneo categoria '+ categoria);
+alert('Gracias por registrar al equipo "' + equipo + '" en el torneo categoria '+ categoria + '.');
 
 
 
