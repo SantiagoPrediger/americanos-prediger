@@ -1,4 +1,147 @@
-h1 {
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Secular+One&display=swap'); */
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Secular One', sans-serif;
+*/
+
+
+
+:root {
+    --color1: #2F4550;
+    --color2: #004643;
+    --color3: #586F7C;
+    --color4: #D1AC00;
+    --color5: #B8DBD9;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.mainContainer {
+    background-color: var(--color1);
+}
+
+.header {
+    height:180px;
+    width: 100%;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    height: 90px;
+    margin: 10px;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+}
+
+.menu li {
+    color: white;
+    margin: 4px;
     text-transform: uppercase;
+}
+.menu li:hover{
+    color: var(--color3);
+}
+
+h1{
+    text-align: center;
+    color: var(--color1);
+    padding-top: 50px;
+    font-size: 10px;
+}
+
+.containerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box:hover{
+    background-color: var(--color5);
+}
+.box h2{
+    margin: 35px 15px 15px 15px;
+}
+.fondo3 {
+    background-color: var(--color3);
+}
+.fondo5 {
+    background-color: var(--color5) ;
+}
+
+.box p {
+    width: 300px;
+    margin: 10px;
+}
+.textoMain {
+    line-height: 30px;
+    font-size: 17px;
+    text-align: center;
+}
+.box img {
+    width: 300px;
+    padding-bottom: 40px;
+}
+.formularioContainer {
+    width: 90%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+.formularioCentrado {
+    
+    margin: 0px 0px 35px 0px ;
+}
+.formularioCentrado input {
+    padding: 8px;
+    margin: 5px;
+    width: 80%;
+}
+.centrar {
+    text-align: center;
+    margin: 5px;
+}
+
+.footer {
+    background-color: var(--color1);
+    height: 130px;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.redes li {
+    margin: 0 15px;
+}
+.redes img {
+    width: 48px;
+}
+
+@media (min-width:760px) {
+    
 }

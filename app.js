@@ -1,29 +1,28 @@
 // BIENVENIDA Y CREACION DE USUARIO - Asignacion de variables
 
-alert('Bienvenido a Torneos Americanos de Padel');
+alert('Bienvenido a Torneos Americanos de Padel ​​​​​​😄\n\nAqui podras encontrar torneos todos los fines de semana.' );
 
-const nombre = prompt('Ingrese su nombre');
-const apellido = prompt('Ingrese su apellido');
-const equipo = prompt('Ingrese el nombre de su equipo');
+const nombre = prompt('Ingrese su nombre.');
+const apellido = prompt('Ingrese su apellido.');
+const equipo = prompt('Ingrese el nombre de su equipo. 🛡️​⚔️');
 
-alert('Gracias ' + nombre + ' ' + apellido + ' por registrarte en la plataforma de Torneos Americanos');
-alert('A continuacion: Todos los premios segun la categoria del torneo:')
+alert('Gracias ' + nombre + ' ' + apellido + ' por registrarte en la plataforma \nde Torneos Americanos. 🤜​🤛​');
+alert('A continuacion: Todos los premios 🏆​ segun la categoria del torneo:')
 
-//INFORMACION SOBRE LOS TORNEOS - Ciclo con for + Operaciones
+//INFORMACION SOBRE LOS TORNEOS - Ciclo con for + Operaciones (ciclo solo para practicar el uso del 'for')
 
 let premioTorneos = 44000;
 let costoInscripcion = 4400;
 
 for (let i = 4; i >= 1; i--) {
     let resultado = premioTorneos * i;
-    alert('Si el torneo es Categoria ' + i + ' el premio por pareja es de ' + Math.round(premioTorneos / i) + '. El costo de inscripcion es ' + Math.round(costoInscripcion / i) + ' por pareja.');
+    alert('Si el torneo es Categoria ' + i + '\nPremio por pareja: ' + Math.round(premioTorneos / i) + '.🏆​ \n\nEl costo de inscripcion 📝 es ' + Math.round(costoInscripcion / i) + ' por pareja.');
 }
 
 // SELECCION DE CATEGORIA DE USUARIO - Ciclo con while
 
-let categoria = Number(prompt('Ingrese su categoria (solo numero)'));  //Falta indicar que solo se pueda agregar valor numerico
-
-while (categoria > 4 || categoria == 0) {
+let categoria = Number(prompt('Ingrese su categoria (solo numero).'));  
+while (categoria != 1 && categoria != 2 && categoria != 3 && categoria != 4) {
     alert('Categoria incorrecta, ingrese un valor entre 1 y 4.');
     categoria = parseInt(prompt('Ingrese su categoria (solo numero).'));
 }
@@ -47,7 +46,7 @@ let torneoElegido;
 // FUNCION PARA CREAR LOS TORNEOS SEGUN CATEGORIA - Funcion combinada con un condicional, y un while para evitar valores incorrectos
 
 const torneosDisponibles = (torneoA, torneoB) => {
-    torneoElegido = Number(prompt('Estos son los torneos de categoria 4 \n' + '1-' + torneoA + '\n' + '2-' + torneoB + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
+    torneoElegido = Number(prompt('Estos son los torneos de categoria ' + categoria + '\n\n' + '1-' + torneoA + '\n' + '2-' + torneoB + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
         if (torneoElegido == 1) {
             torneoElegido = torneoA;
         } else if (torneoElegido == 2) {
@@ -82,9 +81,36 @@ switch (categoria) {
 
 // SALUDO DE CONFIRMACION 
 
-alert('Usted se inscribio en el torneo de ' + torneoElegido);
+alert('Felicitaciones!​🙌​ \n\nUsted se inscribio en el torneo de ' + torneoElegido + '🤩​.');
 
-alert('Gracias ' + nombre + ' por registrar al equipo "' + equipo + '" en el torneo "'+ torneoElegido + '".' );
+alert('Gracias ' + nombre + ' por registrar al equipo "' + equipo + '" en el torneo \n"'+ torneoElegido + '". \n\nMucha suerte. 🍀​' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -104,6 +130,9 @@ if (categoria <= 8 && categoria >= 1) {
     alert('Ingrese una categoria correcta, entre 1 y 8')
 }
 */
+
+
+
 
 /* switch (categoria) {
     case 4:
@@ -170,4 +199,4 @@ if (categoria <= 8 && categoria >= 1) {
             };
         }
         break;       
-} */
+}  */
