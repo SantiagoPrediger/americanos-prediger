@@ -178,4 +178,9 @@ h1{
         width: 500px;
         margin: 20px;
     }
+    .formularioCentrado input {
+        padding: 8px;
+        margin: 5px;
+        width: 60%;
+    }
 }
