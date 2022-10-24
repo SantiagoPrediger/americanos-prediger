@@ -143,5 +143,39 @@ h1{
 }
 
 @media (min-width:760px) {
-    
+    .header {
+        flex-direction: row;
+        height: 100px;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: row;
+        margin-right: 50px;
+    }
+    h1{
+        text-align: center;
+        color: var(--color5);
+        padding-bottom: 20px;
+        font-size: 35px;
+    }
+    .menu li {
+        margin: 10px;
+    }
+    .box {
+        width: 50%;
+        display: flex;
+    }
+    .containerBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .box img {
+        width: 600px;
+        padding-bottom: 40px;
+    }
+    .box p {
+        width: 500px;
+        margin: 20px;
+    }
 }
