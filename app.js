@@ -24,7 +24,7 @@ const torneo4 = new Torneo('Chiqui Torneo', 'Efecto Padel', 1 , 'Domingo');
 const torneo5 = new Torneo(nombreEvento, nuevoLugar, nuevaCategoria , nuevoDia);
 
 
-let ingreso = Number(prompt('Si usted desea buscar un torneo seleccione la opcion 1, si desea registrar un torneo seleccione la opcion 2'));
+let ingreso = Number(prompt('Seleccione la opcion que desea realizar: \n\n1- Buscar un torneo.\n2- Registrar un torneo.\n\nIngrese elegir ingrese el numero 1 o 2'));
 
 if(ingreso === 1){
         // BIENVENIDA Y CREACION DE USUARIO - Asignacion de variables
@@ -124,9 +124,7 @@ if(ingreso === 1){
         nuevaCategoria = parseInt(prompt('Ingrese su categoria (solo numero).'));
     };
     let nuevoDia = prompt('Ingrese el dia de la semana en el que se realizara el torneo')
-
-
-alert('Acaba de registrar un torneo en ' + torneo5.lugar + ' de Categoria ' + torneo5.categoria + '.' + 'El torneo se disputara el proximo ' + torneo5.dia);
+    alert('Acaba de registrar un torneo en ' + torneo5.lugar + ' de Categoria ' + torneo5.categoria + '.' + 'El torneo se disputara el proximo ' + torneo5.dia);
 } else {
     while (ingreso != 1 && ingreso != 2) {
         alert('Opcion incorrecta, ingrese un valor entre 1 y 2.');
