@@ -24,7 +24,7 @@ const torneo4 = new Torneo('Chiqui Torneo', 'Efecto Padel', 1 , 'Domingo');
 const torneo5 = new Torneo(nombreEvento, nuevoLugar, nuevaCategoria , nuevoDia);
 
 
-let ingreso = Number(prompt('Seleccione la opcion que desea realizar: \n\n1- Buscar un torneo.\n2- Registrar un torneo.\n\nIngrese elegir ingrese el numero 1 o 2'));
+let ingreso = Number(prompt('Seleccione la opcion que desea realizar: \n\n1- Inscribirse en un torneo.\n2- Registrar un torneo.\n\nIngrese elegir ingrese el numero 1 o 2'));
 
 if(ingreso === 1){
         // BIENVENIDA Y CREACION DE USUARIO - Asignacion de variables
