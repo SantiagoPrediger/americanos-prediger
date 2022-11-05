@@ -90,11 +90,14 @@ if(ingreso === 1){
 
     // VER TORNEOS DISPONIBLES
 
-    for (let index = 0; index < 8; index++) {
-        alert(listaTorneos[index]);
+    let verListaTorneo = prompt('Desea ver la lista de torneos?\n\n SI/NO').toLowerCase();
+    if(verListaTorneo == 'si'){
+        for (const torneo of listaTorneos) {
+            alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
+        }
+    } else {
+        alert('Puede continuar con su inscripcion')
     }
-
-
 
     // SELECCION DE CATEGORIA DE USUARIO - Ciclo con while
 
@@ -175,6 +178,7 @@ if(ingreso === 1){
     alert('Acaba de registrar el torneo ' + torneo9.nombre + ' de Categoria ' + torneo9.categoria + ' en ' + torneo9.lugar + '.' + ' \nEl evento se disputara el proximo ' + torneo9.dia + '.');
     alert('En total se encuentran registrados ' + listaTorneos.length + ' eventos.')
     let quitarEvento = prompt('Desea eliminar el evento recien creado?\n\nSI/NO').toLowerCase();
+        valorVacio(quitarEvento);
     if (quitarEvento == 'si'){
         listaTorneos.pop()
         alert('Evento eliminado.')
