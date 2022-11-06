@@ -6,6 +6,8 @@ let nombreEvento;
 let nuevoLugar;
 let nuevaCategoria;
 let nuevoDia;
+let categoria;
+let torneoElegido;
 
 
 // ARMADO DE CLASES y OBJETOS
@@ -59,6 +61,8 @@ const valorVacio = (valor) => {
     }
 }
 
+
+
 // INICIO DE CICLO
 
 let ingreso = Number(prompt('Seleccione la opcion que desea realizar: \n\n1- Inscribirse en un torneo.\n2- Registrar un torneo.\n\nIngrese elegir ingrese el numero 1 o 2'));
@@ -88,28 +92,62 @@ if(ingreso === 1){
         alert('Si el torneo es Categoria ' + i + '\nPremio por pareja: ' + Math.round(premioTorneos / i) + '.🏆​ \n\nEl costo de inscripcion 📝 es ' + Math.round(costoInscripcion / i) + ' por pareja.');
     }
 
+
+
     // VER TORNEOS DISPONIBLES
 
     let verListaTorneo = prompt('Desea ver la lista de torneos?\n\n SI/NO').toLowerCase();
     if(verListaTorneo == 'si'){
-        for (const torneo of listaTorneos) {
+        
+        listaTorneos.forEach((torneo) => {
             alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
-        }
+        })
+
+        // PRIMERO HABIA PROBADO CON EL FOR OF, LUEGO CON EL AVANCE DEL CURSO CAMBIE A FOR EACH
+
+        /* for (const torneo of listaTorneos) {
+            alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
+        } */
+
     } else {
         alert('Puede continuar con su inscripcion')
     }
 
     // SELECCION DE CATEGORIA DE USUARIO - Ciclo con while
 
-    let categoria = Number(prompt('Ingrese su categoria (solo numero).'));  
+    categoria = Number(prompt('Ingrese su categoria (solo numero).'));  
     while (categoria != 1 && categoria != 2 && categoria != 3 && categoria != 4) {
         alert('Categoria incorrecta, ingrese un valor entre 1 y 4.');
         categoria = parseInt(prompt('Ingrese su categoria (solo numero).'));
     }
 
+    // RESULTADOS DE TORNEOS SEGUN CATEGORIA
+
+    const torneosPorCategoria = listaTorneos.filter((torneo) => torneo.categoria === categoria)
+/*     alert('Estos son los torneos de ' + categoria + 'disponibles para inscribirse:\n\nTorneo ' +  torneosPorCategoria[0].nombre + ' en el club ' + torneosPorCategoria[0].lugar + ' de categoria ' + torneosPorCategoria[0].categoria + ' el dia ' + torneosPorCategoria[0].dia + '\n Torneo ' +  torneosPorCategoria[1].nombre + ' en el club ' + torneosPorCategoria[1].lugar + ' de categoria ' + torneosPorCategoria[1].categoria + ' el dia ' + torneosPorCategoria[1].dia)
+ */
+    const torneosDisponibles = (torneoA, torneoB) => {
+        torneoElegido = Number(prompt('Estos son los torneos de ' + categoria + 'disponibles para inscribirse:\n\nTorneo ' +  torneosPorCategoria[0].nombre + ' en el club ' + torneoA.lugar + ' de categoria ' + torneoA.categoria + ' el dia ' + torneoA.dia + '\n Torneo ' +  torneoB.nombre + ' en el club ' + torneoB.lugar + ' de categoria ' + torneoB.categoria + ' el dia ' + torneoB.dia));
+            while (torneoElegido != 1 && torneoElegido != 2) {
+                torneoElegido = Number(prompt('OPCION INCORRECTA \n \nSeleccione un torneo indicando la opcion 1 o 2\n' + '\n' + '1-' + torneoA + '\n' + '2-' + torneoB + '\n'));}
+            if (torneoElegido == 1) {
+                torneoElegido = torneoA;
+            } else if (torneoElegido == 2) {
+                torneoElegido = torneoB;
+            };
+    }
+
+    torneosDisponibles(torneosPorCategoria[0], torneosPorCategoria [1]);
+    /* torneosPorCategoria.forEach((torneo) => {
+        alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
+    }) */
+
+    alert('Felicitaciones!​🙌​ \n\nUsted se inscribio en el torneo de ' + torneoElegido.nombre + torneoElegido.lugar + torneoElegido.categoria + torneoElegido.dia +  '🤩​.');
+    
+
     // INFORMACION DE TORNEOS - Asignaciond de variables
 
-    let torneoCat4A = 'La fabrica Padel Categoria 4';
+ /*    let torneoCat4A = 'La fabrica Padel Categoria 4';
     let torneoCat4B = 'Matchpoint Padel Categoria 4';
 
     let torneoCat3A = 'Efecto Padel Categoria 3';
@@ -120,12 +158,12 @@ if(ingreso === 1){
 
     let torneoCat1A = 'Almeria Padel Categoria 1';
     let torneoCat1B = 'Casa Blanca Padel Categoria 1';
-
-    let torneoElegido;
+ */
+    
 
     // FUNCION PARA CREAR LOS TORNEOS SEGUN CATEGORIA - Funcion combinada con un condicional, y un while para evitar valores incorrectos
 
-    const torneosDisponibles = (torneoA, torneoB) => {
+    /* const torneosDisponibles = (torneoA, torneoB) => {
         torneoElegido = Number(prompt('Estos son los torneos de categoria ' + categoria + '\n\n' + '1-' + torneoA + '\n' + '2-' + torneoB + '\n \n Elija el torneo en el que quiere participar seleccionando la opcion 1 o 2'));
             while (torneoElegido != 1 && torneoElegido != 2) {
                 torneoElegido = Number(prompt('OPCION INCORRECTA \n \nSeleccione un torneo indicando la opcion 1 o 2\n' + '\n' + '1-' + torneoA + '\n' + '2-' + torneoB + '\n'));}
@@ -134,11 +172,11 @@ if(ingreso === 1){
             } else if (torneoElegido == 2) {
                 torneoElegido = torneoB;
             };
-    }
+    } */
 
     // SELECCION DE TORNEO A PARTICIPAR - Ciclo con switch, combinado con una funcion.
 
-    switch (categoria) {
+  /*   switch (categoria) {
         case 4:
             torneosDisponibles(torneoCat4A, torneoCat4B)
             break;
@@ -151,13 +189,13 @@ if(ingreso === 1){
         case 1:
             torneosDisponibles(torneoCat1A, torneoCat1B)
             break;       
-    }
+    } */
 
     // SALUDO DE CONFIRMACION 
-
+/* 
     alert('Felicitaciones!​🙌​ \n\nUsted se inscribio en el torneo de ' + torneoElegido + '🤩​.');
 
-    alert('Gracias ' + nombre + ' por registrar al equipo "' + equipo + '" en el torneo \n"'+ torneoElegido + '". \n\nMucha suerte. 🍀​' );
+    alert('Gracias ' + nombre + ' por registrar al equipo "' + equipo + '" en el torneo \n"'+ torneoElegido + '". \n\nMucha suerte. 🍀​' ); */
 
 } else if (ingreso === 2) {
     alert('Bienvenido a Torneos Americanos, para registrar un torneo debera ingresar los datos a continuacion:')
