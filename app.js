@@ -1,7 +1,6 @@
 
 // DECLARACION DE VARIABLES
 
-
 let nombreEvento;
 let nuevoLugar;
 let nuevaCategoria;
@@ -56,120 +55,19 @@ const valorVacio = (valor) => {
 }
 
 
-
 // INICIO DE CICLO // CONDICIONAL (Para elegir ruta de "jugador" u "organizador")
 
+// WHILE para poder utilizar el torneo creado como opcion al inscribirse en un torneo.
 
 while (volverInicio != 'no'){
-    let ingreso = Number(prompt('Seleccione la opcion que desea realizar: \n\n1- Inscribirse en un torneo.\n2- Registrar un torneo.\n\nIngrese elegir ingrese el numero 1 o 2'));
+    let ingreso = Number(prompt('Seleccione la opcion que desea realizar: \n\n1- Registrar un torneo.\n2- Inscribirse en un torneo.\n\nIngrese elegir ingrese el numero 1 o 2'));
 
 
 if(ingreso === 1){
-        
-    // BIENVENIDA Y CREACION DE USUARIO - Asignacion de variables
 
-    alert('Bienvenido a Torneos Americanos de Padel ​​​​​​😄\n\nAqui podras encontrar torneos todos los fines de semana.' );
-
-    let nombre = prompt('Ingrese su nombre.');
-    valorVacio(nombre);
-    let apellido = prompt('Ingrese su apellido.');
-    valorVacio(apellido);
-    let equipo = prompt('Ingrese el nombre de su equipo. 🛡️​⚔️');
-    valorVacio(equipo);
-
-    alert('Gracias ' + nombre + ' ' + apellido + ' por registrarte en la plataforma \nde Torneos Americanos. 🤜​🤛​');
-    alert('A continuacion: Todos los premios 🏆​ y costos de inscripcion segun la categoria del torneo:')
-
-    //INFORMACION SOBRE LOS TORNEOS - Ciclo con for + Operaciones (ciclo solo para practicar el uso del 'for')
-
-    alert('El valor de inscripcion por categoria es:\n\nCategoria 4: $' + valorInscripcion[3] + '\nCategoria 3: $' + valorInscripcion[2] + '\nCategoria 2: $' + valorInscripcion[1] + '\nCategoria 1: $' + valorInscripcion[0])
-
-    alert('El Premio del torneo por categoria es:\n\nCategoria 4: $' + premioTorneo[3] + '\nCategoria 3: $' + premioTorneo[2] + '\nCategoria 2: $' + premioTorneo[1] + '\nCategoria 1: $' + premioTorneo[0])
-
-
-
-
-
-    // VER TORNEOS DISPONIBLES // Opcion de ver los torneos ya disponibles con un for each recorriendo el array de torneos.
-
-    let verListaTorneo = prompt('Desea ver la lista de torneos disponibles?\n\n SI/NO').toLowerCase();
-    if(verListaTorneo == 'si'){
-        
-        listaTorneos.forEach((torneo) => {
-            alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
-        })
-
-        // PRIMERO HABIA PROBADO CON EL FOR OF, LUEGO CON EL AVANCE DEL CURSO CAMBIE A FOR EACH
-
-        /* for (const torneo of listaTorneos) {
-            alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
-        } */
-
-    } else {
-        alert('Puede continuar con su inscripcion')
-    }
-
-    // SELECCION DE CATEGORIA DE USUARIO - Ciclo con while
-
-    categoria = Number(prompt('Ingrese su categoria (solo numero).'));  
-    while (categoria != 1 && categoria != 2 && categoria != 3 && categoria != 4) {
-        alert('Categoria incorrecta, ingrese un valor entre 1 y 4.');
-        categoria = parseInt(prompt('Ingrese su categoria (solo numero).'));
-    }
-
-    // RESULTADOS DE TORNEOS SEGUN CATEGORIA
-
-    const torneosPorCategoria = listaTorneos.filter((torneo) => torneo.categoria === categoria)
-/*     alert('Estos son los torneos de ' + categoria + 'disponibles para inscribirse:\n\nTorneo ' +  torneosPorCategoria[0].nombre + ' en el club ' + torneosPorCategoria[0].lugar + ' de categoria ' + torneosPorCategoria[0].categoria + ' el dia ' + torneosPorCategoria[0].dia + '\n Torneo ' +  torneosPorCategoria[1].nombre + ' en el club ' + torneosPorCategoria[1].lugar + ' de categoria ' + torneosPorCategoria[1].categoria + ' el dia ' + torneosPorCategoria[1].dia)
- */
-    const torneosDisponibles = (torneoA, torneoB) => {
-        torneoElegido = Number(prompt('Estos son los torneos de categoria ' + categoria + '.\nElija entre la opcion 1 y 2 para inscribirse.\n\n1)   Evento: ' +  torneoA.nombre + '\n      Club: ' + torneoA.lugar + '\n      Categoria: ' + torneoA.categoria + '\n      Dia: ' + torneoA.dia + '\n\n2)    Evento: ' +  torneoB.nombre + '\n       Club: ' + torneoB.lugar + '\n       Categoria: ' + torneoB.categoria + '\n       Dia: ' + torneoB.dia));
-            while (torneoElegido != 1 && torneoElegido != 2) {
-                torneoElegido = Number(prompt('OPCION INCORRECTA \n \nSeleccione un torneo indicando la opcion 1 o 2\n' + '\n' + '1-' + torneoA.nombre + '\n' + '2-' + torneoB.nombre + '\n'));}
-            if (torneoElegido == 1) {
-                torneoElegido = torneoA;
-            } else if (torneoElegido == 2) {
-                torneoElegido = torneoB;
-            };
-    }
-
-    torneosDisponibles(torneosPorCategoria[0], torneosPorCategoria [1]);
-    /* torneosPorCategoria.forEach((torneo) => {
-        alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
-    }) */
-
-    const inscripcionPremio = (valorInscripcionFun, premioTorneoFun) => {
-        alert('Felicitaciones!​🙌​ \n\nUsted se inscribio en el torneo: \n\n' + 'Evento: ' +  torneoElegido.nombre + '\nClub: ' + torneoElegido.lugar + '\nCategoria: ' + torneoElegido.categoria + '\nDia: ' + torneoElegido.dia + '\n\nEl costo de inscripcion es $' + valorInscripcionFun + '.\nEl premio del torneo es $' + premioTorneoFun + '.');
-        }
-    
-
-    
-    
-    switch (categoria) {
-        case 4:
-            inscripcionPremio(valorInscripcion[3], premioTorneo[3])
-            break;
-        case 3:
-            inscripcionPremio(valorInscripcion[2], premioTorneo[2])
-            break;
-        case 2:
-            inscripcionPremio(valorInscripcion[1], premioTorneo[1])
-            break;
-        case 1:
-            inscripcionPremio(valorInscripcion[0], premioTorneo[0])
-            break;       
-    }
-    
-
-    alert('Gracias ' + nombre + ' por registrar al equipo "' + equipo + '" en el torneo \n"'+ torneoElegido.nombre + '". \n\nMucha suerte. 🍀​' );
-    
- 
-volverInicio = prompt('Desea volver al inicio? \n\nSI/NO')
-     
-
-
-} else if (ingreso === 2) {
     alert('Bienvenido a Torneos Americanos, para registrar un torneo debera ingresar los datos a continuacion:')
+
+    //ASIGNACION DE VARIABLES
     nombreEvento = prompt('Ingrese el nombre del evento');
         valorVacio(nombreEvento);
     nuevoLugar = prompt('Nombre del club');
@@ -182,10 +80,12 @@ volverInicio = prompt('Desea volver al inicio? \n\nSI/NO')
     nuevoDia = prompt('Ingrese el dia de la semana en el que se realizara el torneo');
         valorVacio(nuevoDia);
     
+    // CREACION DE OBJETO - AGREGADO A UN ARRAY // Permite utilizar el torneo en el ciclo de inscripcion 
     const torneo9 = new Torneo(nombreEvento, nuevoLugar, nuevaCategoria , nuevoDia);
     listaTorneos.push(torneo9);
     alert('Acaba de registrar el torneo ' + torneo9.nombre + ' de Categoria ' + torneo9.categoria + ' en ' + torneo9.lugar + '.' + ' \nEl evento se disputara el proximo ' + torneo9.dia + '.');
     alert('En total se encuentran registrados ' + listaTorneos.length + ' eventos.')
+    
     let verListaTorneosRegistrados = prompt('Desea ver la lista de torneos?\n\n SI/NO').toLowerCase();
     if(verListaTorneosRegistrados == 'si'){
         listaTorneos.forEach((torneo) => {
@@ -201,7 +101,106 @@ volverInicio = prompt('Desea volver al inicio? \n\nSI/NO')
     } else {
         alert('Muchas gracias por registrar su evento.');
     }
-    volverInicio = prompt('Desea volver al inicio? \n\nSI/NO')
+    volverInicio = prompt('Desea volver al inicio? \n\nSI/NO')     
+
+
+} else if (ingreso === 2) {
+        // BIENVENIDA Y CREACION DE USUARIO - Asignacion de variables
+
+        alert('Bienvenido a Torneos Americanos de Padel ​​​​​​😄\n\nAqui podras encontrar torneos todos los fines de semana.' );
+
+        let nombre = prompt('Ingrese su nombre.');
+        valorVacio(nombre);
+        let apellido = prompt('Ingrese su apellido.');
+        valorVacio(apellido);
+        let equipo = prompt('Ingrese el nombre de su equipo. 🛡️​⚔️');
+        valorVacio(equipo);
+    
+        alert('Gracias ' + nombre + ' ' + apellido + ' por registrarte en la plataforma \nde Torneos Americanos. 🤜​🤛​');
+        alert('A continuacion: Todos los premios 🏆​ y costos de inscripcion 1segun la categoria del torneo:')
+    
+        //INFORMACION SOBRE LOS TORNEOS -
+    
+        alert('El valor de inscripcion por categoria es:\n\nCategoria 4: $' + valorInscripcion[3] + '\nCategoria 3: $' + valorInscripcion[2] + '\nCategoria 2: $' + valorInscripcion[1] + '\nCategoria 1: $' + valorInscripcion[0])
+    
+        alert('El Premio del torneo por categoria es:\n\nCategoria 4: $' + premioTorneo[3] + '\nCategoria 3: $' + premioTorneo[2] + '\nCategoria 2: $' + premioTorneo[1] + '\nCategoria 1: $' + premioTorneo[0])
+    
+    
+    
+        // VER TORNEOS DISPONIBLES // Opcion de ver los torneos ya disponibles con un for each recorriendo el array de torneos.
+    
+        let verListaTorneo = prompt('Desea ver la lista de torneos disponibles?\n\n SI/NO').toLowerCase();
+        if(verListaTorneo == 'si'){
+            
+            listaTorneos.forEach((torneo) => {
+                alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
+            })
+    
+            // PRIMERO HABIA PROBADO CON EL FOR OF, LUEGO CON EL AVANCE DEL CURSO CAMBIE A FOR EACH
+    
+            /* for (const torneo of listaTorneos) {
+                alert('Torneo ' + torneo.nombre + ' en el club ' + torneo.lugar + ' de categoria ' + torneo.categoria + ' el dia ' + torneo.dia)
+            } */
+    
+        } else {
+            alert('Puede continuar con su inscripcion')
+        }
+    
+        // SELECCION DE CATEGORIA DE USUARIO - Ciclo con while
+    
+        categoria = Number(prompt('Ingrese su categoria (solo numero).'));  
+        while (categoria != 1 && categoria != 2 && categoria != 3 && categoria != 4) {
+            alert('Categoria incorrecta, ingrese un valor entre 1 y 4.');
+            categoria = parseInt(prompt('Ingrese su categoria (solo numero).'));
+        }
+    
+        // RESULTADOS DE TORNEOS SEGUN CATEGORIA
+    
+        const torneosPorCategoria = listaTorneos.filter((torneo) => torneo.categoria === categoria)
+    
+        // FUNCION PARA ELEGIR TORNEOS DISPONIBLES 
+
+        const torneosDisponibles = (torneoA, torneoB) => {
+            torneoElegido = Number(prompt('Estos son los torneos de categoria ' + categoria + '.\nElija entre la opcion 1 y 2 para inscribirse.\n\n1)   Evento: ' +  torneoA.nombre + '\n      Club: ' + torneoA.lugar + '\n      Categoria: ' + torneoA.categoria + '\n      Dia: ' + torneoA.dia + '\n\n2)   Evento: ' +  torneoB.nombre + '\n      Club: ' + torneoB.lugar + '\n      Categoria: ' + torneoB.categoria + '\n      Dia: ' + torneoB.dia));
+                while (torneoElegido != 1 && torneoElegido != 2) {
+                    torneoElegido = Number(prompt('OPCION INCORRECTA \n \nSeleccione un torneo indicando la opcion 1 o 2\n' + '\n' + '1-' + torneoA.nombre + '\n' + '2-' + torneoB.nombre + '\n'));}
+                if (torneoElegido == 1) {
+                    torneoElegido = torneoA;
+                } else if (torneoElegido == 2) {
+                    torneoElegido = torneoB;
+                };
+        }
+    
+        torneosDisponibles(torneosPorCategoria[0], torneosPorCategoria [1]);
+    
+        // FUNCION PARA INDICAR PRECIO/PREMIO SEGUN CATEGORIA (serviria para abonar la inscripcion)
+
+        const inscripcionPremio = (valorInscripcionFun, premioTorneoFun) => {
+            alert('Felicitaciones!​🙌​ \n\nUsted se inscribio en el torneo: \n\n' + 'Evento: ' +  torneoElegido.nombre + '\nClub: ' + torneoElegido.lugar + '\nCategoria: ' + torneoElegido.categoria + '\nDia: ' + torneoElegido.dia + '\n\nEl costo de inscripcion es $' + valorInscripcionFun + '.\nEl premio del torneo es $' + premioTorneoFun + '.');
+            }
+        
+        switch (categoria) {
+            case 4:
+                inscripcionPremio(valorInscripcion[3], premioTorneo[3])
+                break;
+            case 3:
+                inscripcionPremio(valorInscripcion[2], premioTorneo[2])
+                break;
+            case 2:
+                inscripcionPremio(valorInscripcion[1], premioTorneo[1])
+                break;
+            case 1:
+                inscripcionPremio(valorInscripcion[0], premioTorneo[0])
+                break;       
+        }
+        
+    
+        alert('Gracias ' + nombre + ' por registrar al equipo "' + equipo + '" en el torneo \n"'+ torneoElegido.nombre + '". \n\nMucha suerte. 🍀​' );
+        
+     
+    volverInicio = prompt('Desea volver al inicio? \n\nSI/NO')    
+
+    
 } else {
     while (ingreso != 1 && ingreso != 2) {
         alert('Opcion incorrecta, ingrese un valor entre 1 y 2.');
