@@ -79,6 +79,7 @@ h1{
 .box:hover{
     background-color: var(--color5);
 }
+
 .box h2{
     margin: 35px 15px 15px 15px;
 }
