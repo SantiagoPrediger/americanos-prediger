@@ -13,25 +13,26 @@ let volverInicio;
 // ARMADO DE CLASES 
 
 class Torneo {
-    constructor(nombre, lugar,categoria,dia) {
+    constructor(nombre, lugar, categoria, dia, photo) {
         this.nombre = nombre;
         this.lugar = lugar;
         this.categoria = categoria;
         this.dia = dia;
+        this.photo = photo;
     }
 }
 
 // ARMADO DE OBJETOS
 
 
-const torneo1 = new Torneo('Ajpp', 'Matchpoint', 4 , 'Lunes');
-const torneo2 = new Torneo('New Green Padel', 'La Fabrica', 3 , 'Martes');
-const torneo3 = new Torneo('Yuka Sports', 'Flow Sports', 2 , 'Miercoles');
-const torneo4 = new Torneo('Chiqui Torneo', 'Efecto Padel', 1 , 'Jueves');
-const torneo5 = new Torneo('Ajpp', 'Matchpoint', 1 , 'Viernes');
-const torneo6 = new Torneo('New Green Padel', 'La Fabrica', 2 , 'Domingo');
-const torneo7 = new Torneo('Yuka Sports', 'Flow Sports', 3 , 'Sabado');
-const torneo8 = new Torneo('Chiqui Torneo', 'Efecto Padel', 4 , 'Domingo');
+const torneo1 = new Torneo('Ajpp', 'Matchpoint', 4 , 'Lunes', './img/tor1');
+const torneo2 = new Torneo('New Green Padel', 'La Fabrica', 3 , 'Martes', './img/tor2');
+const torneo3 = new Torneo('Yuka Sports', 'Flow Sports', 2 , 'Miercoles', './img/tor3');
+const torneo4 = new Torneo('Chiqui Torneo', 'Efecto Padel', 1 , 'Jueves', './img/tor4');
+const torneo5 = new Torneo('Ajpp', 'Matchpoint', 1 , 'Viernes', './img/tor5');
+const torneo6 = new Torneo('New Green Padel', 'La Fabrica', 2 , 'Domingo', './img/tor6');
+const torneo7 = new Torneo('Yuka Sports', 'Flow Sports', 3 , 'Sabado', './img/tor7');
+const torneo8 = new Torneo('Chiqui Torneo', 'Efecto Padel', 4 , 'Domingo', './img/tor8');
 
 
 // ARRAYS

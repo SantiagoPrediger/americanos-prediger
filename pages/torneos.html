@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneos Americanos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Secular+One&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../img/favicon.png">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/logo torname.png" alt="Logo Torneos Americanos">
+            </a>
+        </div>
+        <div class="containerMenu">
+            <ul class="menu">
+                <a href="../index.html">
+                    <li>Inicio</li>
+                </a>
+                <a href="#">
+                    <li>Torneos</li>
+                </a>
+                <a href="#">
+                    <li>Canchas</li>
+                </a>
+                <a href="#">
+                    <li>Ingresar</li>
+                </a>
+            </ul>
+        </div>
+    </header>
+    <main class="mainContainer">
+        <div class="formContainer">
+            <form action="#" class="formularioBuscador">
+                <div class="formulario-centrado">
+                    <select name="Evento" class="event">
+                        <option value=""disabled selected hidden>Selecciona un club</option>
+                        <option value="15">Fiesta de 15</option>
+                        <option value="Egresados">Egresados</option>
+                        <option value="Empresarial">Evento Empresarial</option>
+                        <option value="Cumpleaños">Cumpleaños</option>
+                    </select>
+                    <select name="Evento" class="event" >
+                        <option value=""disabled selected hidden>Selecciona una categoria</option>
+                        <option value="15">Fiesta de 15</option>
+                        <option value="Egresados">Egresados</option>
+                        <option value="Empresarial">Evento Empresarial</option>
+                        <option value="Cumpleaños">Cumpleaños</option>
+                    </select>
+                    <button class="button">Buscar</button>
+                </div>
+            </form>
+        </div>
+        <div class="torneos" id="torneos">
+            
+        </div>
+        
+    </main>
+    <footer class="footer">
+        <div class="containerFooter">
+            <ul class="redes">
+                <a href=""><li><img src="../img/facebook.png" alt="Icono Facebook"></li></a>
+                <a href=""><li><img src="../img/instagram.png" alt="Icono Instagram"></li></a>
+                <a href=""><li><img src="../img/linkedin.png" alt="Icono Linkedin"></li></a>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/b361885909.js" crossorigin="anonymous"></script>
+    <script src="../data.js"></script>
+    <script src="../app2.js"></script>
+</body>
+</html>

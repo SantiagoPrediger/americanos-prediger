@@ -7,11 +7,11 @@ font-family: 'Secular One', sans-serif;
 
 
 :root {
-    --color1: #2F4550;
+    --color1: #172540;
     --color2: #004643;
-    --color3: #586F7C;
+    --color3: #4177A1;
     --color4: #D1AC00;
-    --color5: #B8DBD9;
+    --color5: #97B7D8;
 }
 
 
@@ -59,7 +59,7 @@ font-family: 'Secular One', sans-serif;
 
 h1{
     text-align: center;
-    color: var(--color1);
+    color: var(--cr1olo);
     padding-top: 50px;
     font-size: 10px;
 }
@@ -125,8 +125,9 @@ h1{
 }
 
 .footer {
-    background-color: var(--color1);
+    background-color: var(--color3);
     height: 130px;
+    box-shadow: 0px 0px 20px black;
 }
 
 .redes {
@@ -142,6 +143,103 @@ h1{
     width: 48px;
 }
 
+/* FORMULARIO */
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.formularioBuscador {
+    background-color: var(--color3);
+    width: 240px;
+    height: 120px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px black;
+}
+
+.formulario-centrado {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.event {
+    padding: 4px;
+    margin: 4px;
+    border-radius: 3px;
+}
+.button {
+    padding: 4px;
+    margin: 4px;
+    border-radius: 3px;
+}
+
+
+
+/* Torneos */
+
+
+.torneos {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+.cardContainer {
+    width: 240px;
+    background-color: white;
+    height: 440px;
+    margin:15px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 20px black;
+}
+
+.infoTorneo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgTorneo {
+    width: 100%;
+}
+.img {
+    width: 240px;
+    height: 240px;
+}
+.infoTorneo h2 {
+    text-align: center;
+    font-size: 16px;
+    width: 80%;
+    margin: 10px auto 10px auto;
+}
+.datosTorneo span {
+    font-size: 13px;
+    margin: 10px;
+}
+.datosTorneos i {
+    margin: 10px;
+}
+.botonInscribirse {
+    width: 60%;
+    padding: 4px;
+    margin:20px;
+}
+
 @media (min-width:760px) {
     .header {
         flex-direction: row;
@@ -154,7 +252,7 @@ h1{
     }
     h1{
         text-align: center;
-        color: var(--color5);
+        color: white;
         padding-bottom: 20px;
         font-size: 35px;
     }
@@ -177,10 +275,53 @@ h1{
     .box p {
         width: 500px;
         margin: 20px;
+        color: white;
+    }
+    .box h2 {
+        color: white;
     }
     .formularioCentrado input {
         padding: 8px;
         margin: 5px;
         width: 60%;
+    }
+
+    .torneos {
+        flex-direction: row;
+        width: 80%;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+    .cardContainer {
+        width: 300px;
+        height: 500px;
+    }
+    .formularioBuscador {
+        height: 80px;
+        width: 60%;
+        flex-direction: row;
+    }
+    .formulario-centrado {
+        display: flex;
+        flex-direction: row;
+    }
+    .event {
+        padding: 10px;
+        margin: 4px;
+        border-radius: 3px;
+        width: 300px;
+        cursor: pointer;
+    }
+    .button {
+        padding: 10px;
+        margin: 4px;
+        border-radius: 3px;
+        width: 100px;
+        cursor: pointer;
+    }
+    .img {
+        width: 100%;
+        height: 240px;
     }
 }
