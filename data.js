@@ -1,6 +1,5 @@
 
 
-
 class Torneo {
     constructor(nombre, lugar, categoria, dia, precio, photo) {
         this.nombre = nombre;
@@ -34,3 +33,19 @@ console.log(valorInscripcion);
 
 const premioTorneo = [80000, 60000, 40000, 20000]
 console.log(premioTorneo)
+
+
+
+class Producto {
+    constructor(photo, nombre, precio) {
+        this.photo = photo;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
+
+const producto1 = new Producto('../img/cubregrips.jpg', 'Cubregrips', 800); 
+const producto2 = new Producto('../img/gorra.jpg', 'Gorra', 5000); 
+const producto3 = new Producto('../img/protectores.jpg', 'Protectores', 1200); 
+
+const listaProductos = [producto1, producto2, producto3]

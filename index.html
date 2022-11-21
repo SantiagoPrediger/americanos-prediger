@@ -33,14 +33,14 @@
                 <a href="#">
                     <li>Canchas</li>
                 </a>
-                <a href="#">
+                <a href="./pages/sesion.html">
                     <li>Ingresar</li>
                 </a>
             </ul>
         </div>
     </header>
     <main class="mainContainer">
-        <h1>Bienvenido a Torneos Americanos de padel</h1>
+        <h1 class="bienvenido">Bienvenido a Torneos Americanos de padel</h1>
         <div class="containerBox">
             <div class="box fondo3">
                 <h2>Organizas Torneos?</h2>
@@ -54,10 +54,8 @@
                             <h3 class="centrar">Completa tus datos para registrarte:</h3>
                             <input type="text" placeholder="Nombre:">
                             <input type="text" placeholder="Apellido:">
-                            <input type="text" placeholder="Nombre del club:">
-                            <input type="text" placeholder="Localidad:">
-                            <br>
-                            <input type="submit">
+                            <input type="email" placeholder="Email:">
+                            <input type="submit" value="Crear Usuario">
                         </div>
                     </form>
                 </div>
@@ -69,14 +67,13 @@
                     quis voluptates, odio debitis.</p>
                 <img src="./img/jugador.jpg" alt="Jugador padel">
                 <div class="formularioContainer centrar">
-                    <form action="#" class="formulario">
+                    <form class="formulario" id="formUsuario">
                         <div class="formularioCentrado">
-                            <h3 class="centrar">Completa tus datos para registrarte:</h3>
-                            <input type="text" placeholder="Nombre:">
-                            <input type="text" placeholder="Apellido:">
-                            <input type="text" placeholder="Nombre de la pareja:">
-                            <input type="number" placeholder="Categoria">
-                            <input type="submit">
+                            <h3 class="centrar">Completa tus datos para ingresar:</h3>
+                            <input type="text" placeholder="Nombre:" id="nombre">
+                            <input type="text" placeholder="Apellido:" id="apellido">
+                            <input type="email" placeholder="Email:" id="email"><br>
+                            <button id="button">Buscar Torneos</button>
                         </div>
                     </form>
                 </div>
@@ -92,6 +89,6 @@
             </ul>
         </div>
     </footer>
-    <script src="#"></script>
+    <script src="login.js"></script>
 </body>
 </html>

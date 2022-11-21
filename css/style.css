@@ -24,7 +24,7 @@ font-family: 'Secular One', sans-serif;
     font-family: 'Lato', sans-serif;
 }
 
-.mainContainer {
+body {
     background-color: var(--color1);
 }
 
@@ -57,7 +57,7 @@ font-family: 'Secular One', sans-serif;
     color: var(--color3);
 }
 
-h1{
+h1 .bienvenido{
     text-align: center;
     color: var(--cr1olo);
     padding-top: 50px;
@@ -239,6 +239,27 @@ h1{
     width: 60%;
     padding: 4px;
     margin:20px;
+}
+
+.subtotal {
+    margin: 100px auto;
+    background-color: var(--color3);
+    width: 240px;
+}
+
+/* CONTENEDOR DE PRODUCTOS */
+
+.productContainer {
+    width: 240px;
+    background-color: white;
+    height: 440px;
+    margin:15px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 20px black;
 }
 
 @media (min-width:760px) {
